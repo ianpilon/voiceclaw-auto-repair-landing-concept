@@ -88,15 +88,22 @@
         </p>
       </div>
       <div class="md:col-span-2">
-        <!-- Placeholder for hero image. Replace src with real image when ready. -->
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200 bg-slate-100 aspect-[696/697] flex items-center justify-center">
-          <div class="text-center p-8">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-lg bg-slate-200 flex items-center justify-center">
-              <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            </div>
-            <p class="text-xs text-slate-500 font-medium uppercase tracking-wide">Hero image placeholder</p>
-            <p class="text-xs text-slate-400 mt-1">Replace with tech-on-lift or under-hood image</p>
-          </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="hero-master-mechanic-500.webp 500w, hero-master-mechanic-882.webp 882w"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+            <img
+              src="hero-master-mechanic.jpg"
+              alt="Auto repair shop storefront with the front desk visible through glass windows on the left and an open service bay with a car on a lift visible on the right, illustrating the physical distance between where the phone rings at the front desk and where the technician is actually working in the service bay"
+              class="w-full h-auto"
+              loading="eager"
+              width="882"
+              height="627"
+            />
+          </picture>
         </div>
         <p class="text-center text-xs text-slate-400 mt-3 italic">
           The call your hands can't reach.
