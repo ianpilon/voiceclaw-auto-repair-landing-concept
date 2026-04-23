@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoiceClaw: Never miss a customer call, even when both hands are under a hood</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    html, body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .accent-orange { color: #ea580c; }
+    .bg-accent-orange { background-color: #ea580c; }
+    .bg-accent-orange:hover { background-color: #c2410c; }
+    .border-accent-orange { border-color: #ea580c; }
+    .gradient-hero-text { background: linear-gradient(135deg, #ea580c 0%, #f97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .ring-accent-orange { --tw-ring-color: #ea580c; }
+    .phone-pulse { animation: phonePulse 2s ease-in-out infinite; }
+    @keyframes phonePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.85; }
+    }
+    .glow-orange { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.5); animation: glowPulse 2s ease-in-out infinite; }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.5); }
+      50% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); }
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+  <!-- Sticky Nav -->
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center">
+          <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17 2a3 3 0 013 3v4a5 5 0 01-4 4.9V22H8v-8.1A5 5 0 014 9V5a3 3 0 013-3h10zm-3 2H10v5a2 2 0 104 0V4z"/>
+          </svg>
+        </div>
+        <span class="font-bold text-lg tracking-tight">VoiceClaw</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm">
+        <span class="hidden md:inline text-slate-600 font-medium tracking-wide uppercase text-xs">AI Front Desk</span>
+        <button class="hidden md:inline-flex items-center gap-1 px-4 py-2 rounded-lg border border-slate-300 font-medium hover:bg-slate-50 transition">
+          Try Live Demo
+        </button>
+        <button class="inline-flex items-center gap-1 px-4 py-2 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800 transition">
+          Join the Pilot
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+    <div class="grid md:grid-cols-5 gap-10 lg:gap-16 items-center mb-4">
+      <div class="md:col-span-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 mb-8">
+          <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+          <span class="text-xs font-semibold text-orange-700 uppercase tracking-wide">Built for independent auto repair shops</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+          Never miss <span class="gradient-hero-text">a customer call</span>,
+          even when both hands are under a hood.
+        </h1>
+        <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+          You can't answer your phone from a lift with a scan tool in your hand. Neither can your tech. And when the front desk is with another customer, somebody has to walk across the shop to catch the phone. VoiceClaw answers with auto-shop intelligence. Knows how to ask about the car, qualifies the job, and either books the appointment or hands you a clean message so you can finish the alignment first.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 mb-4">
+          <button class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-accent-orange text-white font-semibold text-base hover:shadow-lg transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Join the pilot cohort →
+          </button>
+          <button class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white border-2 border-slate-300 text-slate-900 font-semibold text-base hover:bg-slate-50 transition-all">
+            Book a 15-min intro call →
+          </button>
+        </div>
+        <p class="text-sm mb-6">
+          <a href="#live-demo" class="inline-flex items-center gap-1.5 font-semibold text-orange-600 hover:text-orange-700 underline decoration-dashed decoration-orange-400 underline-offset-4">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Or skip the pitch and hear the live demo yourself →
+          </a>
+        </p>
+        <p class="text-sm text-slate-500">
+          <strong class="text-slate-700">Under 5 minutes</strong> on a phone call. That's your whole setup. Month-to-month, cancel anytime, keep your number. No credit card. No forms. No dashboard to learn. Built in collaboration with pilot shops right now — expect a real conversation, not a sales pitch.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <!-- Placeholder for hero image. Replace src with real image when ready. -->
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200 bg-slate-100 aspect-[696/697] flex items-center justify-center">
+          <div class="text-center p-8">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-lg bg-slate-200 flex items-center justify-center">
+              <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <p class="text-xs text-slate-500 font-medium uppercase tracking-wide">Hero image placeholder</p>
+            <p class="text-xs text-slate-400 mt-1">Replace with tech-on-lift or under-hood image</p>
+          </div>
+        </div>
+        <p class="text-center text-xs text-slate-400 mt-3 italic">
+          The call your hands can't reach.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-3 gap-6 md:gap-12 mt-8 pb-4 border-t border-slate-200 pt-8">
+      <div>
+        <div class="text-3xl md:text-4xl font-extrabold tracking-tight mb-1">24/7</div>
+        <div class="text-xs md:text-sm text-slate-500 font-medium">Phone coverage, even when your front desk is with another customer</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-extrabold tracking-tight mb-1">$1,200+</div>
+        <div class="text-xs md:text-sm text-slate-500 font-medium">Average repair order you're missing when calls go unanswered</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-extrabold tracking-tight mb-1">8 min</div>
+        <div class="text-xs md:text-sm text-slate-500 font-medium">Before quote-shoppers call the next shop on Google</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust / Works With Row -->
+  <section class="border-y border-slate-200 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm">
+      <div class="flex items-center gap-2 text-slate-600">
+        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span class="font-medium">Speaks make, model, year &amp; VIN</span>
+      </div>
+      <div class="flex items-center gap-2 text-slate-600">
+        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span class="font-medium">Never commits to a price you didn't authorize</span>
+      </div>
+      <div class="flex items-center gap-2 text-slate-600">
+        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span class="font-medium">AAA Approved &amp; NAPA AutoCare friendly</span>
+      </div>
+      <div class="flex items-center gap-2 text-slate-600">
+        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span class="font-medium">Compatible with Mitchell1, Tekmetric &amp; ShopBoss</span>
+      </div>
+      <div class="flex items-center gap-2 text-slate-600">
+        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span class="font-medium">ChatGPT · Claude · Perplexity discoverable</span>
+      </div>
+      <div class="flex items-center gap-2 text-slate-600">
+        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span class="font-medium">ASE-certified, licensed &amp; insured shops only</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilot-cohort banner -->
+  <section class="bg-orange-50 border-b border-orange-200 py-5">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 text-sm">
+      <span class="inline-flex items-center gap-2 flex-shrink-0">
+        <span class="w-2 h-2 rounded-full bg-orange-500 phone-pulse"></span>
+        <span class="font-bold text-orange-700 uppercase tracking-wide text-xs">Early pilot, looking for 3-5 shops</span>
+      </span>
+      <p class="text-slate-700 leading-relaxed">
+        We built VoiceClaw for home-services trades first (plumbers, HVAC techs, roofers, painters). Auto repair is the next trade we're learning. We're looking for 3-5 independent shops to shape the auto-specific build with us. Discounted access. Direct access to the person building it. No sales team. If you've already tried an answering service that couldn't tell a hybrid from a diesel, we'd like to talk.
+      </p>
+    </div>
+  </section>
+
+  <!-- Problem Section (Dark) -->
+  <section class="bg-slate-950 text-white py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-xs font-bold text-orange-400 uppercase tracking-[0.2em] mb-4">The Problem</div>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6 max-w-3xl">
+        Your phone is a hundred feet away from the lift, and it keeps ringing.
+      </h2>
+      <p class="text-slate-400 text-lg mb-12 max-w-2xl">
+        Every missed call is a brake job, a timing belt, a diagnostic. Half of them are quote-shoppers calling four shops, picking the cheapest, ghosting the rest. The other half are real bookings. You can't tell which one is which if nobody answers, and you can't be on a lift and at the front desk at the same time. A tech who steps off the lift to answer the phone just lost a billable hour to take a call about oil-change pricing.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <!-- Card 1 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">The call you miss from the lift</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Customer calls Wednesday at 2pm. Front desk is with another customer. The call rolls to voicemail or a tech steps off the lift to grab it. <span class="text-orange-400 font-semibold">That tech just lost an hour of billable labor</span> to answer a question about brake pricing on a 2018 Accord. You know this happens every day, and you can't measure it because the ones you lose aren't in any log.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">The quote shopper going to the next shop</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Homeowner calls four shops, asks the same question, picks the cheapest, ghosts the other three. When you give a generic "we'd have to look at the car," they hang up. When you commit to a specific price over the phone, you're stuck with it. <span class="text-orange-400 font-semibold">You need to qualify and book without over-committing on price</span>, and a rushed tech at the front desk can't do that.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">The AI lineup you're not in</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Car owners are asking ChatGPT and Google AI to find a mechanic before they ever scroll search results. The AI picks whoever it can structure and book. Dealership service departments are building for this. Your shop's website was built in 2019. <span class="text-orange-400 font-semibold">If you're not in the AI lineup</span>, you won't know why your inbound has been softer this year. You'll blame the economy or the dealers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why VoiceClaw Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Why VoiceClaw</div>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6 max-w-3xl">
+        Not another answering service. Built for shops that still turn wrenches.
+      </h2>
+      <p class="text-slate-600 text-lg mb-12 max-w-2xl">
+        Generic AI receptionists don't know the difference between a hybrid and a diesel. Human answering services cost $500+/month and still transfer half the calls. Lead-gen platforms sell your own neighborhood back to you at $90 a pop. Here's how we compare.
+      </p>
+
+      <!-- Comparison Table -->
+      <div class="overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left py-4 px-6 font-semibold text-slate-600"></th>
+              <th class="py-4 px-6 bg-orange-50">
+                <div class="text-xs font-bold text-orange-600 uppercase tracking-wide mb-1">Recommended</div>
+                <div class="font-bold text-slate-900">VoiceClaw</div>
+              </th>
+              <th class="py-4 px-6 font-semibold text-slate-600">Ruby Receptionist</th>
+              <th class="py-4 px-6 font-semibold text-slate-600">Rosie / Goodcall</th>
+              <th class="py-4 px-6 font-semibold text-slate-600">Angi / RepairPal lead platform</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="py-4 px-6 font-medium text-slate-700">Monthly cost</td>
+              <td class="py-4 px-6 text-center bg-orange-50 font-semibold">$79 flat</td>
+              <td class="py-4 px-6 text-center text-slate-600">$235–$1,000+</td>
+              <td class="py-4 px-6 text-center text-slate-600">$90–$250</td>
+              <td class="py-4 px-6 text-center text-slate-600">$75-150 per lead</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-slate-700">Answers when your hands are under a hood</td>
+              <td class="py-4 px-6 text-center bg-orange-50">✓ Yes, instantly</td>
+              <td class="py-4 px-6 text-center text-slate-600">✓ Yes (extra cost)</td>
+              <td class="py-4 px-6 text-center text-slate-600">✓ Yes</td>
+              <td class="py-4 px-6 text-center text-slate-600">✗ Doesn't answer calls</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-slate-700">Asks make, model, year, trim</td>
+              <td class="py-4 px-6 text-center bg-orange-50">✓ On every call</td>
+              <td class="py-4 px-6 text-center text-slate-600">Needs scripting</td>
+              <td class="py-4 px-6 text-center text-slate-600">Generic SMB</td>
+              <td class="py-4 px-6 text-center text-slate-600">N/A</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-slate-700">Handles hybrid / diesel / EV triage</td>
+              <td class="py-4 px-6 text-center bg-orange-50">✓ Knows what you service</td>
+              <td class="py-4 px-6 text-center text-slate-600">Needs scripting</td>
+              <td class="py-4 px-6 text-center text-slate-600">No</td>
+              <td class="py-4 px-6 text-center text-slate-600">N/A</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-slate-700">Never commits to a price you didn't authorize</td>
+              <td class="py-4 px-6 text-center bg-orange-50 font-semibold">✓ Defers quotes to you by default</td>
+              <td class="py-4 px-6 text-center text-slate-600">Depends on script</td>
+              <td class="py-4 px-6 text-center text-slate-600">Varies</td>
+              <td class="py-4 px-6 text-center text-slate-600">N/A</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-slate-700">Books appointments live</td>
+              <td class="py-4 px-6 text-center bg-orange-50">✓ Into your schedule</td>
+              <td class="py-4 px-6 text-center text-slate-600">Takes a message only</td>
+              <td class="py-4 px-6 text-center text-slate-600">Varies</td>
+              <td class="py-4 px-6 text-center text-slate-600">✗ No booking</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-slate-700">AI-discoverable (ChatGPT, Perplexity)</td>
+              <td class="py-4 px-6 text-center bg-orange-50">✓ Built in, structured data</td>
+              <td class="py-4 px-6 text-center text-slate-600">✗ Phone-only</td>
+              <td class="py-4 px-6 text-center text-slate-600">Partial</td>
+              <td class="py-4 px-6 text-center text-slate-600">✗ Closed ecosystem</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-slate-700">Setup time</td>
+              <td class="py-4 px-6 text-center bg-orange-50 font-semibold">Under 5 minutes, by voice</td>
+              <td class="py-4 px-6 text-center text-slate-600">1–2 weeks onboarding</td>
+              <td class="py-4 px-6 text-center text-slate-600">Hours in a dashboard</td>
+              <td class="py-4 px-6 text-center text-slate-600">Days to approve</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-stone-50 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">How it works</div>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-16 max-w-3xl">
+        An AI that speaks auto and answers when you can't step off the lift.
+      </h2>
+
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start pb-8 border-b border-slate-200">
+          <div class="text-4xl font-extrabold text-slate-300 min-w-[60px]">01</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Set up in a single phone call, under 5 minutes</h3>
+            <p class="text-slate-600 leading-relaxed max-w-2xl">
+              You call a number. An AI asks you about your shop: what makes and models you service, whether you do hybrid or diesel or EV, what jobs are wait-jobs vs. drop-offs, what your hours are, what your pricing philosophy is on common jobs, when to book and when to hand off to you. By the end of the call, you have a live website, a working business phone number, and an AI receptionist on call.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start pb-8 border-b border-slate-200">
+          <div class="text-4xl font-extrabold text-slate-300 min-w-[60px]">02</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Answers every inbound call with auto-shop intelligence</h3>
+            <p class="text-slate-600 leading-relaxed max-w-2xl">
+              Phone rings while your front desk is with another customer. VoiceClaw picks up with a natural voice that asks the right questions: year, make, model, trim, what's happening with the car, whether a check-engine light is on, whether it's a wait-job or a drop-off. Gets the info, confirms availability, books the appointment into your schedule. You see it when you step off the lift.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start pb-8 border-b border-slate-200">
+          <div class="text-4xl font-extrabold text-slate-300 min-w-[60px]">03</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Defers quotes to you. Never over-commits.</h3>
+            <p class="text-slate-600 leading-relaxed max-w-2xl">
+              Quote calls ("how much for brakes on a 2018 Accord?") are handled differently than booking calls. By default, VoiceClaw captures the vehicle info and the job type, promises a quote back within the hour, and texts you the details. You quote when you're off the lift. The customer hears a professional process. You keep the booking. Nobody commits you to a price you didn't authorize. (As the pilot matures, you can configure specific quote bands the AI can give without checking with you.)
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start pb-8 border-b border-slate-200">
+          <div class="text-4xl font-extrabold text-slate-300 min-w-[60px]">04</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Keeps you in the AI lineup</h3>
+            <p class="text-slate-600 leading-relaxed max-w-2xl">
+              Car owners increasingly ask ChatGPT or Google AI for a local mechanic. VoiceClaw publishes your service area, makes you service, hours, certifications (ASE, AAA Approved, NAPA AutoCare, OEM-specific training), and bookability in the structured format AI assistants need. If your competitors aren't there, you get the call.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div class="text-4xl font-extrabold text-slate-300 min-w-[60px]">05</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Hands off when it needs to</h3>
+            <p class="text-slate-600 leading-relaxed max-w-2xl">
+              Complex diagnostic, fleet account asking for a multi-vehicle quote, insurance-adjacent work, or a customer with a vehicle you don't service? VoiceClaw transfers you directly, or takes a detailed message with VIN and contact info. Every call is logged and transcribed. You keep the craft; it handles the overhead.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo Invitation -->
+  <section id="live-demo" class="bg-orange-50 py-20 border-y border-orange-200">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-orange-300 mb-6">
+        <span class="w-2 h-2 rounded-full bg-orange-500 phone-pulse"></span>
+        <span class="text-xs font-semibold text-orange-700 uppercase tracking-wide">Live demo available</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-6">
+        Try calling VoiceClaw yourself.
+      </h2>
+      <p class="text-slate-700 text-lg mb-8 leading-relaxed">
+        Call the demo number and say "I need brakes on a 2018 Accord" or "my check engine light came on this morning" or "can you service a 2022 Tesla Model 3." See what an AI that actually asks the right auto-shop questions sounds like, before you hire one.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <button class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-accent-orange text-white font-semibold text-base shadow-lg hover:shadow-xl transition-all glow-orange">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Join the pilot cohort →
+        </button>
+        <button class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-white border-2 border-slate-300 text-slate-900 font-semibold text-base hover:bg-slate-50 transition-all">
+          Book a 15-min call →
+        </button>
+      </div>
+      <p class="text-sm text-slate-600 mt-4">
+        Pilot cohort is 3-5 shops. We call you, not the other way around. Real conversation, not a sales pitch.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Math -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <div class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">The Math</div>
+          <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+            <span class="accent-orange">$52,000+</span> in bays you're not losing to missed calls.
+          </h2>
+          <p class="text-slate-600 text-lg leading-relaxed mb-6">
+            VoiceClaw doesn't just save time. It captures the repair orders you're currently losing to voicemail, protects billable labor-hour utilization across your bays, and keeps you findable when AI assistants look.
+          </p>
+          <p class="text-sm text-slate-500">
+            Based on a typical 3-6 bay independent shop handling a mix of wait-jobs and drop-offs. Your mileage may vary. These are sketch numbers that the pilot cohort will refine.
+          </p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-2">
+          <div class="divide-y divide-slate-200">
+            <div class="flex items-center justify-between px-5 py-4">
+              <span class="text-slate-700">Missed calls captured during labor hours</span>
+              <span class="font-bold">$26,000+</span>
+            </div>
+            <div class="flex items-center justify-between px-5 py-4">
+              <span class="text-slate-700">Quote-shopper conversions that used to walk</span>
+              <span class="font-bold">$18,000+</span>
+            </div>
+            <div class="flex items-center justify-between px-5 py-4">
+              <span class="text-slate-700">Billable labor hours not lost to phone interruption</span>
+              <span class="font-bold">$5,500+</span>
+            </div>
+            <div class="flex items-center justify-between px-5 py-4">
+              <span class="text-slate-700">Google LSA / RepairPal / Angi fees reduced</span>
+              <span class="font-bold">$3,500+</span>
+            </div>
+            <div class="flex items-center justify-between px-5 py-4 bg-orange-50 rounded-lg">
+              <span class="font-bold">Total annual impact</span>
+              <span class="font-extrabold text-orange-600">$53,000+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials placeholder -->
+  <section class="py-24 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">What pilot shops say</div>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-12 max-w-3xl">
+        From shop owners who were tired of pulling techs off the lift to answer the phone.
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-8 rounded-xl border border-slate-200">
+          <div class="flex items-center gap-1 mb-4 text-orange-500">
+            ★★★★★
+          </div>
+          <p class="text-slate-800 text-lg mb-6 leading-relaxed">
+            "My front desk was with a customer when the phone rang. My tech came off the lift to answer it. VoiceClaw caught the next one. Booked a $1,400 brake-and-rotor on a 2019 CR-V while I was finishing the alignment. The customer didn't know they were talking to an AI."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-300"></div>
+            <div>
+              <div class="font-semibold text-sm">Tony M.</div>
+              <div class="text-xs text-slate-500">Independent Auto Service, pilot cohort</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-xl border border-slate-200">
+          <div class="flex items-center gap-1 mb-4 text-orange-500">
+            ★★★★★
+          </div>
+          <p class="text-slate-800 text-lg mb-6 leading-relaxed">
+            "I'd tried an answering service before. They booked a hybrid as a gas car. Cost me a wasted bay hour and a bad review. VoiceClaw actually knows what a hybrid is. That's the difference."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-300"></div>
+            <div>
+              <div class="font-semibold text-sm">Jim D.</div>
+              <div class="text-xs text-slate-500">Independent Auto Service, pilot cohort</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-xs text-slate-400 mt-8 italic">Testimonial placeholders. Real quotes replace these as the pilot cohort comes online.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Common questions</div>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-12">
+        Everything you want to know before you call.
+      </h2>
+      <div class="space-y-6">
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            What happens when someone calls asking for a price?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            By default, VoiceClaw captures the vehicle (year, make, model, trim), the job type, and the customer's contact info. It promises a quote back within the hour and texts you the details immediately. You quote when you're off the lift. The customer experiences a professional process. You never get stuck with a price you didn't authorize. As you get more comfortable with the system, you can configure specific quote bands ("brakes on an economy sedan: $X-$Y") that the AI can give without checking with you. We deliberately start conservative: we'd rather defer a quote than over-commit you.
+          </p>
+        </details>
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            Does it really understand auto-shop terminology?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            It's trained on auto-shop language: wait-jobs, drop-offs, diagnostics, OBD-II codes, hybrid vs. diesel vs. EV triage, make / model / year / trim qualification, VIN lookup, check-engine lights, brake pads vs. pads-and-rotors, alignments. Not everything — it's not a master tech, it's a front-desk assistant. It knows when to book and when to hand off to you. Try the demo number and say something that would stump a generic answering service ("2018 Civic with a P0420 code, intermittent"). Compare that to Ruby or Rosie.
+          </p>
+        </details>
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            Why is it $79/month when Ruby charges $235+?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Ruby uses human operators. Humans cost money per minute. VoiceClaw uses AI, which doesn't. You get 24/7 coverage at a flat rate instead of variable per-call billing. During the pilot cohort, pricing is discounted from the $79 anchor; we'd rather have your feedback than your full monthly.
+          </p>
+        </details>
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            I'm a franchise location (Master Mechanic, Midas, Meineke, Monro). Can I sign up?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Probably not directly, at least not yet. Most franchise agreements route phone systems and customer-facing technology through corporate approval. If you're a franchisee who feels this pain and wants to advocate for it inside your franchise system, we'd love to talk — both to understand the dynamic and potentially to pitch your corporate office later. But the near-term pilot cohort is independent non-franchised shops where you have full decision authority on software and phone systems.
+          </p>
+        </details>
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            What happens when a part's backordered and I can't honor the appointment?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Straight talk: today, VoiceClaw doesn't check parts availability at NAPA / AutoZone Pro / Advance / O'Reilly before booking. It books the appointment; you verify parts when you see the job on your schedule. For parts-dependent jobs, the default flow is to tell the customer "we'll confirm parts availability and call you back within the day." As the pilot cohort matures, we're building shop-management-software integrations (Mitchell1, Tekmetric, ShopBoss) so the AI can check parts-on-order status before committing to an appointment. That's capability we're building with pilot feedback, not something we've already shipped.
+          </p>
+        </details>
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            What happens when someone calls my old number?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            You can either keep your existing number and forward overflow or after-hours calls to VoiceClaw, or port your number fully. Most shops start with forwarding to test, then port once they trust it. We handle the telecom piece; you don't touch a carrier.
+          </p>
+        </details>
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            Can it book into Mitchell1, Tekmetric, or ShopBoss?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Integration depth varies by shop management software and is actively being built with pilot feedback. Today, VoiceClaw can text you every booking the moment it confirms, send the job details (year / make / model / trim / VIN / contact / service requested / appointment time) for manual entry, or integrate via Google Calendar if you use it as your bay schedule. Native Mitchell1 / Tekmetric / ShopBoss integration is on the roadmap and is one of the reasons we're running a pilot cohort before rolling out broadly.
+          </p>
+        </details>
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            How is the setup actually under 5 minutes?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            No dashboard to configure. Just a phone call. We ask you about your shop: what makes you service, what jobs are wait vs. drop-off, what your hours are, how you want the AI to handle quote questions, when to book directly vs. hand off to you. By the end of the call, the AI is live and your site is built. If you can describe your shop to a new customer, you can set VoiceClaw up.
+          </p>
+        </details>
+        <details class="group border-b border-slate-200 pb-6">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg">
+            Can I cancel?
+            <span class="transition-transform group-open:rotate-45 text-2xl text-slate-400">+</span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes. Month-to-month, cancel anytime. Your phone number ports back out. We keep your logs and transcripts accessible for 90 days after cancellation. Pilot cohort shops who cancel because capability gaps don't clear fast enough aren't on the hook for anything beyond the months they used.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA (Dark) -->
+  <section class="bg-slate-950 text-white py-24">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+        Stop pulling your techs off the <span class="accent-orange">lift</span> to answer the phone.
+      </h2>
+      <p class="text-slate-400 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+        Flat-rate pricing. Setup in under 5 minutes, by voice. No dashboard to learn. Built for independent shops that still turn wrenches. Pilot cohort is 3-5 shops. If you've already tried an answering service that booked a hybrid as a gas car, we'd like to hear from you.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <button class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-accent-orange text-white font-semibold text-base shadow-lg hover:shadow-xl transition-all">
+          Join the pilot cohort →
+        </button>
+        <button class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-transparent border-2 border-slate-600 text-white font-semibold text-base hover:bg-slate-900 transition-all">
+          Book a 15-min call →
+        </button>
+      </div>
+      <p class="text-sm text-slate-500 mt-6">
+        No credit card. No forms. You talk, we build.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-500 py-8 border-t border-slate-900">
+    <div class="max-w-6xl mx-auto px-6 text-center text-xs">
+      VoiceClaw: AI front desk for independent auto repair shops. Built for the calls your hands can't reach.
+    </div>
+  </footer>
+
+</body>
+</html>
